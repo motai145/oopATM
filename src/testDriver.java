@@ -19,8 +19,8 @@ public class testDriver {
 			System.out.println("Pleas enter you pin number");
 			int pinIn = sc.nextInt();	
 			//check if account number 
-			int positionAccount = checkAccount(accountNumberIn, account);
-			int positionPin = checkPin(pinIn, account);
+			int positionAccount = Person.checkAccount(accountNumberIn, account);
+			int positionPin = Person.checkPin(pinIn, account);
 			
 			if((positionAccount != -1) || (positionPin != -1)) {
 				System.out.println("Either your accountNumber or Pin does not match or exist");
@@ -56,24 +56,5 @@ public class testDriver {
 			}
 		}
 	
-	public static int checkAccount(int accountNumberIn, ArrayList<Person> accountArray) {
-		for(int i = 0; i < accountArray.size(); i++) {
-			Person temp = accountArray.get(i);
-			if(temp.accountNumber == accountNumberIn) {
-				return i;
-			}
-		}	
-		return -1;
-	}
-	
-	public static int checkPin(int pinNumberIn, ArrayList<Person> accountArray) {
-		for(int i = 0; i < accountArray.size(); i++) {
-			Person temp = accountArray.get(i);
-			if(temp.pin == pinNumberIn) {
-				return i;
-			}
-		}	
-		return -1;
-	}
 
 }

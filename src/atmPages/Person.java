@@ -8,8 +8,8 @@ import java.util.*;
 public class Person {
 	
 	public int accountNumber;
-	public int pin;
-	public float balance;
+	private int pin;
+	private float balance;
 	
 	public Person(int accountNumber, int pin, float balance){
 		
@@ -81,6 +81,25 @@ public class Person {
 	public void showBalance(Person person) {
 		System.out.print("You have $" + person.balance + "in your bank account");
 	
+	}
+	public static int checkAccount(int accountNumberIn, ArrayList<Person> accountArray) {
+		for(int i = 0; i < accountArray.size(); i++) {
+			Person temp = accountArray.get(i);
+			if(temp.accountNumber == accountNumberIn) {
+				return i;
+			}
+		}	
+		return -1;
+	}
+	
+	public static int checkPin(int pinNumberIn, ArrayList<Person> accountArray) {
+		for(int i = 0; i < accountArray.size(); i++) {
+			Person temp = accountArray.get(i);
+			if(temp.pin == pinNumberIn) {
+				return i;
+			}
+		}	
+		return -1;
 	}
 	
 	
