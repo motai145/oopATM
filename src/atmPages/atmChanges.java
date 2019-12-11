@@ -8,6 +8,11 @@ public class atmChanges extends Person{
 		// TODO Auto-generated constructor stub
 	}
 	
+	@Override 
+	public void showBalance(Person person) {
+		
+	}
+	
 
 
 }

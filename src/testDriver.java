@@ -16,16 +16,14 @@ public class testDriver {
 		System.out.println("Please enter you Account number");
 		int accountNumberIn = sc.nextInt();
 		System.out.println("Pleas enter you pin number");
-		int pin = sc.nextInt();
+		int pinIn = sc.nextInt();
 		
-		//check if correct
-		for(int i = 0; i < account.size(); i++) {
-			Person temp = account.get(i);
-			if(temp.accountNumber == accountNumberIn) {
-				
-			}
+		//check if account number 
+		int positionAccount = checkAccount(accountNumberIn, account);
+		int positionPin = checkPin(pinIn, account);
+		if((positionAccount != -1) || (positionPin != -1)) {
+			System.out.println("Either your accountNumber or Pin does not match or exist");
 		}
-		
 		
 		
 		//ask what they want to do? check or deposit or end
@@ -53,6 +51,26 @@ public class testDriver {
 		
 		//export file
 		Person.exporting(account);
+	}
+	
+	public static int checkAccount(int accountNumberIn, ArrayList<Person> accountArray) {
+		for(int i = 0; i < accountArray.size(); i++) {
+			Person temp = accountArray.get(i);
+			if(temp.accountNumber == accountNumberIn) {
+				return i;
+			}
+		}	
+		return -1;
+	}
+	
+	public static int checkPin(int pinNumberIn, ArrayList<Person> accountArray) {
+		for(int i = 0; i < accountArray.size(); i++) {
+			Person temp = accountArray.get(i);
+			if(temp.pin == pinNumberIn) {
+				return i;
+			}
+		}	
+		return -1;
 	}
 
 }
