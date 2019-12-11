@@ -1,5 +1,6 @@
 package atmPages;
+import java.util.*;
 
-public class atmChanges {
+public class atmChanges extends mainATMPage{
 
 }
