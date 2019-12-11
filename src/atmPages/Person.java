@@ -21,7 +21,7 @@ public class Person {
 	
 	public static ArrayList<Person> importing(){
 		
-		File file = new File("C:\\Users\\matto\\fileIOstuff\\stuff.txt");
+		File file = new File("C:\\Users\\matto\\eclipse-workspaceNEW\\oopATMgithub\\importing.txt");
 		Scanner sc;
 		ArrayList<Person> accounts = new ArrayList<Person>();
 		
