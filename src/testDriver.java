@@ -13,10 +13,14 @@ public class testDriver {
 		//ask for user account + pin
 		Scanner sc = new Scanner(System.in);
 		
+		try {
 		System.out.println("Please enter you Account number");
 		int accountNumberIn = sc.nextInt();
 		System.out.println("Pleas enter you pin number");
 		int pinIn = sc.nextInt();
+		} catch (Exception e) {
+			System.out.println("There was an input error, please enter and integer");
+		}
 		
 		//check if account number 
 		int positionAccount = checkAccount(accountNumberIn, account);
