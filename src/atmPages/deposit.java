@@ -6,5 +6,10 @@ public class deposit extends Person {
 		super(accountNumber, pin, balance);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public void showBalance(float amount) {
+		
+		
+	}
 
 }
