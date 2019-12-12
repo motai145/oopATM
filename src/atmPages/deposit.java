@@ -7,9 +7,10 @@ public class deposit extends Person {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public void showBalance(float amount) {
+	public float showBalance(float amount) {
+		float remainder = this.balance + amount;
 		
-		
+		return remainder;
 	}
 
 }

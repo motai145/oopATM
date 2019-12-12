@@ -98,9 +98,11 @@ public class Person {
 		return -1;
 	}
 	
-	public void showBalance(float amount) {
+	public float showBalance(float amount) {
 		//You currently have this much in your account 
 		System.out.println("You currently have $" + this.balance + " in your account");
+		
+		return 0;
 		
 	}
 
