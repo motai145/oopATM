@@ -56,7 +56,7 @@ public class Person {
 	
 	public static void exporting(ArrayList<Person> accounts) {
 
-		File file = new File("C:\\Users\\matto\\eclipse-workspaceNEW\\oopATMgithub\\exporting.txt");
+		File file = new File("C:\\Users\\matto\\eclipse-workspaceNEW\\oopATMgithub\\importing.txt");
 		
 		try {
 			

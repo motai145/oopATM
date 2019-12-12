@@ -18,7 +18,6 @@ public class testDriver {
 			int accountNumberIn = sc.nextInt();
 			System.out.println("Please enter you pin number");
 			int pinIn = sc.nextInt();	
-			//check if account number 
 			int positionAccount = Person.checkAccount(accountNumberIn, account);
 			int positionPin = Person.checkPin(pinIn, account);
 			
@@ -30,8 +29,7 @@ public class testDriver {
 		
 			Person personalAccount = account.get(positionAccount);
 			personalAccount.showBalance(0);
-			
-			//ask what they want to do? check or deposit or end
+		
 			try {
 					boolean escape = true;
 					while(escape != false) {
@@ -42,27 +40,39 @@ public class testDriver {
 							//execute deposit method
 							System.out.println("How much would you like to deposit?");
 							float depo = sc.nextFloat();
-							Person depositing = new deposit(personalAccount.accountNumber, personalAccount.pin, personalAccount.balance);
-							float remainder = depositing.showBalance(depo);
-							personalAccount.balance = remainder;
-							System.out.println("You current amount is $" + personalAccount.balance);
+							if(depo < 0) {
+								System.out.println("Invalid input, please correct");
+								System.out.println("");
 								
+							}else {
+								Person depositing = new deposit(personalAccount.accountNumber, personalAccount.pin, personalAccount.balance);
+								float remainder = depositing.showBalance(depo);
+								personalAccount.balance = remainder;
+								System.out.println("You current amount is $" + personalAccount.balance);
+								
+							}
+			
 						//withdrawl
 						}else if(decision == 2) {
 							//execute withdrawl method
 							System.out.println("How much would you like to withdrawl?");
 							float withdrawl = sc.nextFloat();
-							Person withdrawling = new withdrawl(personalAccount.accountNumber, personalAccount.pin, personalAccount.balance);
-							float remaninder = withdrawling.showBalance(withdrawl);
-							personalAccount.balance = remaninder; 
-							System.out.println("You current amount is $" + personalAccount.balance);
-								
+							if(withdrawl < 0) {
+								System.out.println("Invalid input, please correct");
+								System.out.println("");
+							}else {
+								Person withdrawling = new withdrawl(personalAccount.accountNumber, personalAccount.pin, personalAccount.balance);
+								float remaninder = withdrawling.showBalance(withdrawl);
+								personalAccount.balance = remaninder; 
+								System.out.println("You current amount is $" + personalAccount.balance);
+							}	
 							//exit
 						}else if(decision == 3 ) {
 							escape = false;
 						
 						}else {
 							System.out.print("Wrong input, try again");
+							System.out.println("");
 						}
 					}	
 				
@@ -70,8 +80,6 @@ public class testDriver {
 				System.out.print("Wrong input, please rerun program");
 				System.exit(0);
 			}
-		
-		//Change account information in the arraylist
 		
 		//done
 			Person.exporting(account);
