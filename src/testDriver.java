@@ -48,7 +48,7 @@ public class testDriver {
 								Person depositing = new deposit(personalAccount.accountNumber, personalAccount.pin, personalAccount.balance);
 								float remainder = depositing.showBalance(depo);
 								personalAccount.balance = remainder;
-								System.out.println("You current amount is $" + personalAccount.balance);
+								System.out.printf("Your current amount is $" + "%.2f" + "\n", personalAccount.balance);
 								
 							}
 			
@@ -64,7 +64,7 @@ public class testDriver {
 								Person withdrawling = new withdrawl(personalAccount.accountNumber, personalAccount.pin, personalAccount.balance);
 								float remaninder = withdrawling.showBalance(withdrawl);
 								personalAccount.balance = remaninder; 
-								System.out.println("You current amount is $" + personalAccount.balance);
+								System.out.printf("Your current amount is $" + "%.2f" + "\n", personalAccount.balance);
 							}	
 							//exit
 						}else if(decision == 3 ) {
