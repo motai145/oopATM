@@ -17,3 +17,4 @@ The ATM system allows users to:
 [Instruction Notes]
 
 Change file path of text file to match it on users system 
+In addition, use the account names in importing.txt to access the ATM
