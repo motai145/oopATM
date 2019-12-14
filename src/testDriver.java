@@ -14,16 +14,16 @@ public class testDriver {
 		
 		try {
 			
-			System.out.println("Please enter you Account number");
+			System.out.println("Please enter your Account number");
 			int accountNumberIn = sc.nextInt();
-			System.out.println("Please enter you pin number");
+			System.out.println("Please enter your pin number");
 			int pinIn = sc.nextInt();	
 			int positionAccount = Person.checkAccount(accountNumberIn, account);
 			int positionPin = Person.checkPin(pinIn, account);
 			
 			if((positionAccount == -1) || (positionPin == -1)) {
 				System.out.println("Either your credentals were not correct, or your account does not exist");
-				System.out.println("Please Try Again");
+				System.out.println("Please try again");
 				System.exit(0);
 			}
 		
@@ -55,7 +55,7 @@ public class testDriver {
 						//withdrawl
 						}else if(decision == 2) {
 							//execute withdrawl method
-							System.out.println("How much would you like to withdrawl?");
+							System.out.println("How much would you like to withdraw?");
 							float withdrawl = sc.nextFloat();
 							if(withdrawl < 0) {
 								System.out.println("Invalid input, please correct");
@@ -86,7 +86,7 @@ public class testDriver {
 			System.out.println("Thank you for using our ATM!");
 			
 			} catch (Exception e) {
-				System.out.println("There was an input error, Please try again with only integers");
+				System.out.println("There was an input error, please try again with only integers");
 				System.exit(0);
 			}
 		}
