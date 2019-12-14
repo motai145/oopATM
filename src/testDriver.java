@@ -14,6 +14,7 @@ public class testDriver {
 		
 		try {
 			
+			//This section asks for users account information, then checks to see if they are in our system
 			System.out.println("Please enter your Account number");
 			int accountNumberIn = sc.nextInt();
 			System.out.println("Please enter your pin number");
@@ -31,11 +32,12 @@ public class testDriver {
 			personalAccount.showBalance(0);
 		
 			try {
-					boolean escape = true;
+				//gives options to what the user would like to do	
+				boolean escape = true;
 					while(escape != false) {
 						System.out.println("Do you want to deposit[1], withdrawl[2], or end[3]?");
 						int decision = sc.nextInt();
-						//deposit
+						//deposit money 
 						if(decision == 1) {
 							//execute deposit method
 							System.out.println("How much would you like to deposit?");
@@ -52,7 +54,7 @@ public class testDriver {
 								
 							}
 			
-						//withdrawl
+						//withdrawl money
 						}else if(decision == 2) {
 							//execute withdrawl method
 							System.out.println("How much would you like to withdraw?");
@@ -66,11 +68,12 @@ public class testDriver {
 								personalAccount.balance = remaninder; 
 								System.out.printf("Your current amount is $" + "%.2f" + "\n", personalAccount.balance);
 							}	
-							//exit
+							//exit loop. they do not want to do anything 
 						}else if(decision == 3 ) {
 							escape = false;
 						
 						}else {
+							// the input is incorrect
 							System.out.print("Wrong input, try again");
 							System.out.println("");
 						}
@@ -81,7 +84,7 @@ public class testDriver {
 				System.exit(0);
 			}
 		
-		//done
+		//export the project in the file
 			Person.exporting(account);
 			System.out.println("Thank you for using our ATM!");
 			

@@ -19,6 +19,8 @@ public class Person {
 		
 	}
 	
+	//imports the list from the textfile
+	//returns the the information into an arraylist
 	public static ArrayList<Person> importing(){
 		
 		File file = new File("C:\\Users\\matto\\eclipse-workspaceNEW\\oopATMgithub\\importing.txt");
@@ -54,6 +56,8 @@ public class Person {
 			return accounts;
 	}
 	
+	//exports the file to the importing.txt file to update the withdrawl amount
+	
 	public static void exporting(ArrayList<Person> accounts) {
 
 		File file = new File("C:\\Users\\matto\\eclipse-workspaceNEW\\oopATMgithub\\importing.txt");
@@ -78,6 +82,7 @@ public class Person {
 		}
 	}
 
+	//method to check if the account number the user inputed is in our system
 	public static int checkAccount(int accountNumberIn, ArrayList<Person> accountArray) {
 		for(int i = 0; i < accountArray.size(); i++) {
 			Person temp = accountArray.get(i);
@@ -88,6 +93,8 @@ public class Person {
 		return -1;
 	}
 	
+	//method to check if the pin is in the array list
+	//this does not check to see if they match, only to see if they exist
 	public static int checkPin(int pinNumberIn, ArrayList<Person> accountArray) {
 		for(int i = 0; i < accountArray.size(); i++) {
 			Person temp = accountArray.get(i);
@@ -98,6 +105,7 @@ public class Person {
 		return -1;
 	}
 	
+	//method to show the current balance in the users account 
 	public float showBalance(float amount) {
 		//You currently have this much in your account 
 		System.out.println("You currently have $" + this.balance + " in your account");
